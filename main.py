@@ -19,7 +19,7 @@ class PeriodicTable(QMainWindow):
         self.setWindowTitle("Define Chemical Formula")
 
     def reset_text_field(self):
-        pass
+        self.ui.chemical_formula.setText("")
 
     def chemical_formula_changed(self, new_formula):
         pass
@@ -40,7 +40,9 @@ class PeriodicTable(QMainWindow):
             new_chemical_formula = new_isotope_string
 
         self.ui.chemical_formula.setText(new_chemical_formula)
+        self.ui.chemical_formula.setFocus()
 
+        # make chemical formula editable (bug in pyqt that sometimes turn off editable)
 
     def click_button(self, element):
         IsotopesHandler(parent=self, element=element.title())

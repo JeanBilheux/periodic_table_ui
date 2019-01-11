@@ -755,6 +755,7 @@ class Ui_MainWindow(object):
         self.label.setObjectName("label")
         self.horizontalLayout.addWidget(self.label)
         self.chemical_formula = QtWidgets.QLineEdit(self.centralwidget)
+        self.chemical_formula.setPlaceholderText("")
         self.chemical_formula.setObjectName("chemical_formula")
         self.horizontalLayout.addWidget(self.chemical_formula)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)

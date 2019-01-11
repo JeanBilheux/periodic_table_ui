@@ -2212,7 +2212,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="chemical_formula"/>
+       <widget class="QLineEdit" name="chemical_formula">
+        <property name="placeholderText">
+         <string extracomment="Click elements in table or Define manually Formula"/>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButton">
