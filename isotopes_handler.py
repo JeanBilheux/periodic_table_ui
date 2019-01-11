@@ -32,8 +32,6 @@ class IsotopeDialog(QDialog):
         self.ui = UiDialog()
         self.ui.setupUi(self)
 
-        self.setWindowTitle("Select the Isotope of {}".format(element))
-
         self.init_widgets(element)
 
     def init_widgets(self, element):

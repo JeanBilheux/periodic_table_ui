@@ -21,6 +21,9 @@ class Ui_Dialog(object):
         Dialog.setModal(True)
         self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
         self.verticalLayout.setObjectName("verticalLayout")
+        self.label_2 = QtWidgets.QLabel(Dialog)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout.addWidget(self.label_2)
         self.widget = QtWidgets.QWidget(Dialog)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -59,5 +62,6 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.label_2.setText(_translate("Dialog", "Select the Isotope"))
         self.label.setText(_translate("Dialog", "Number of this Element:"))
 
