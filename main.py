@@ -18,6 +18,16 @@ class PeriodicTable(QMainWindow):
         self.ui.setupUi(self)
         self.setWindowTitle("Define Chemical Formula")
 
+        self.init_widgets()
+
+    def init_widgets(self):
+
+        # color of element buttons
+
+        # clear button icon
+
+        pass
+
     def reset_text_field(self):
         self.ui.chemical_formula.setText("")
 
