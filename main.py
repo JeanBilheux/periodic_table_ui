@@ -1,4 +1,5 @@
 import sys
+import copy
 
 from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QMainWindow, QApplication
@@ -10,6 +11,19 @@ from isotopes_handler import IsotopesHandler
 class PeriodicTable(QMainWindow):
 
     isotope_ui = None
+    list_ui_color = {'list_ui': None,
+                     'color': None}
+
+    list_color = {0: copy.deepcopy(list_ui_color),
+                  1: copy.deepcopy(list_ui_color),
+                  2: copy.deepcopy(list_ui_color),
+                  3: copy.deepcopy(list_ui_color),
+                  4: copy.deepcopy(list_ui_color),
+                  5: copy.deepcopy(list_ui_color),
+                  6: copy.deepcopy(list_ui_color),
+                  7: copy.deepcopy(list_ui_color),
+                  }
+
 
     def __init__(self, parent=None):
 
@@ -18,11 +32,145 @@ class PeriodicTable(QMainWindow):
         self.ui.setupUi(self)
         self.setWindowTitle("Define Chemical Formula")
 
+        self.init_ui_color_dictionary()
         self.init_widgets()
+
+    def init_ui_color_dictionary(self):
+
+        # color of element buttons
+
+        # purple
+        self.list_color[0]['list_ui'] = [self.ui.h,
+                                         self.ui.c,
+                                         self.ui.n,
+                                         self.ui.o,
+                                         self.ui.p,
+                                         self.ui.s,
+                                         self.ui.se,
+                                         ]
+        self.list_color[0]['color'] = "#938ac0"
+
+        # cyan
+        self.list_color[1]['list_ui'] = [self.ui.li,
+                                         self.ui.na,
+                                         self.ui.k,
+                                         self.ui.rb,
+                                         self.ui.cs,
+                                         self.ui.fr,
+                                         ]
+        self.list_color[1]['color'] = "#99d5c2"
+
+        # light green
+        self.list_color[2]['list_ui'] = [self.ui.be,
+                                         self.ui.mg,
+                                         self.ui.ca,
+                                         self.ui.sr,
+                                         self.ui.ba,
+                                         self.ui.ra,
+                                         ]
+        self.list_color[2]['color'] = "#c6e8c1"
+
+        # light yellow
+        self.list_color[3]['list_ui'] = [self.ui.b,
+                                         self.ui.si,
+                                         self.ui.ge,
+                                         self.ui.arsenic,
+                                         self.ui.sb,
+                                         self.ui.te,
+                                         self.ui.po,
+                                        ]
+        self.list_color[3]['color'] = "#eef8b9"
+
+        # dark yellow
+        self.list_color[4]['list_ui'] = [self.ui.f,
+                                         self.ui.cl,
+                                         self.ui.br,
+                                         self.ui.i,
+                                         self.ui.at,
+                                         self.ui.ts,
+                                         ]
+        self.list_color[4]['color'] = "#fee9b0"
+
+        # blue
+        self.list_color[5]['list_ui'] = [self.ui.he,
+                                         self.ui.ne,
+                                         self.ui.ar,
+                                         self.ui.kr,
+                                         self.ui.xe,
+                                         self.ui.rn,
+                                         self.ui.og,
+                                         ]
+        self.list_color[5]['color'] = "#79afd1"
+
+        # light orange
+        self.list_color[6]['list_ui'] = [self.ui.al,
+                                         self.ui.ga,
+                                         self.ui.indium,
+                                         self.ui.sn,
+                                         self.ui.tl,
+                                         self.ui.pb,
+                                         self.ui.bi,
+                                         self.ui.nh,
+                                         self.ui.fl,
+                                         self.ui.mc,
+                                         self.ui.lv,
+                                         ]
+        self.list_color[6]['color'] = "#fec796"
+
+        # dark orange
+        self.list_color[7]['list_ui'] = [self.ui.sc,
+                                         self.ui.ti,
+                                         self.ui.v,
+                                         self.ui.cr,
+                                         self.ui.mn,
+                                         self.ui.fe,
+                                         self.ui.co,
+                                         self.ui.ni,
+                                         self.ui.cu,
+                                         self.ui.zn,
+                                         self.ui.y,
+                                         self.ui.zr,
+                                         self.ui.nb,
+                                         self.ui.mo,
+                                         self.ui.tc,
+                                         self.ui.ru,
+                                         self.ui.rh,
+                                         self.ui.pd,
+                                         self.ui.ag,
+                                         self.ui.cd,
+                                         self.ui.lu,
+                                         self.ui.hf,
+                                         self.ui.ta,
+                                         self.ui.w,
+                                         self.ui.re,
+                                         self.ui.os,
+                                         self.ui.ir,
+                                         self.ui.pt,
+                                         self.ui.au,
+                                         self.ui.hg,
+                                         self.ui.lr,
+                                         self.ui.rf,
+                                         self.ui.db,
+                                         self.ui.sg,
+                                         self.ui.bh,
+                                         self.ui.hs,
+                                         self.ui.mt,
+                                         self.ui.ds,
+                                         self.ui.rg,
+                                         self.ui.cn,
+                                         ]
+        self.list_color[7]['color'] = "#f79d83"
+
 
     def init_widgets(self):
 
-        # color of element buttons
+        # set color of buttons
+        for _key in self.list_color.keys():
+            _list_ui = self.list_color[_key]['list_ui']
+            _color = self.list_color[_key]['color']
+            for _ui in _list_ui:
+                _ui.setStyleSheet("background-color:{}".format(_color))
+
 
         # clear button icon
 
