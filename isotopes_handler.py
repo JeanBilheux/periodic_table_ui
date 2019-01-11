@@ -45,6 +45,10 @@ class IsotopeDialog(QDialog):
 
     def accept(self):
         self.parent.isotope_ui = None
+
+        isotope_selected = self.ui.comboBox.currentText()
+        isotope_number = self.ui.number_of_elements.value()
+        self.parent.add_new_entry(isotope=isotope_selected, number=isotope_number)
         self.close()
 
     def reject(self):

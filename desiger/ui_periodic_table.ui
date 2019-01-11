@@ -2212,7 +2212,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit"/>
+       <widget class="QLineEdit" name="chemical_formula"/>
       </item>
       <item>
        <widget class="QPushButton" name="pushButton">
@@ -3797,7 +3797,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>lineEdit</sender>
+   <sender>chemical_formula</sender>
    <signal>textChanged(QString)</signal>
    <receiver>MainWindow</receiver>
    <slot>chemical_formula_changed()</slot>

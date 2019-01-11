@@ -24,6 +24,24 @@ class PeriodicTable(QMainWindow):
     def chemical_formula_changed(self, new_formula):
         pass
 
+    def add_new_entry(self, isotope='', number=1):
+        if isotope == '':
+            return
+
+        previous_chemical_formula = str(self.ui.chemical_formula.text())
+        if number > 1:
+            new_isotope_string = "({}){}".format(isotope, number)
+        else:
+            new_isotope_string = "{}".format(isotope)
+
+        if previous_chemical_formula != '':
+            new_chemical_formula = previous_chemical_formula + '-' + new_isotope_string
+        else:
+            new_chemical_formula = new_isotope_string
+
+        self.ui.chemical_formula.setText(new_chemical_formula)
+
+
     def click_button(self, element):
         IsotopesHandler(parent=self, element=element.title())
 

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'desiger/ui_periodic_table.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.6
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -754,9 +754,9 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setObjectName("label")
         self.horizontalLayout.addWidget(self.label)
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setObjectName("lineEdit")
-        self.horizontalLayout.addWidget(self.lineEdit)
+        self.chemical_formula = QtWidgets.QLineEdit(self.centralwidget)
+        self.chemical_formula.setObjectName("chemical_formula")
+        self.horizontalLayout.addWidget(self.chemical_formula)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setMinimumSize(QtCore.QSize(30, 30))
         self.pushButton.setMaximumSize(QtCore.QSize(30, 30))
@@ -881,7 +881,7 @@ class Ui_MainWindow(object):
         self.pushButton_3.clicked.connect(MainWindow.cancel)
         self.pushButton_2.clicked.connect(MainWindow.ok)
         self.pushButton.clicked.connect(MainWindow.reset_text_field)
-        self.lineEdit.textChanged['QString'].connect(MainWindow.chemical_formula_changed)
+        self.chemical_formula.textChanged['QString'].connect(MainWindow.chemical_formula_changed)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
