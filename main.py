@@ -25,7 +25,7 @@ class PeriodicTable(QMainWindow):
         pass
 
     def click_button(self, element):
-        IsotopesHandler(parent=self, element=element)
+        IsotopesHandler(parent=self, element=element.title())
 
     def h_button(self):
         self.click_button('h')

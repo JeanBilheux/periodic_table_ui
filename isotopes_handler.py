@@ -1,3 +1,5 @@
+import periodictable
+
 try:
     from PyQt4.QtGui import QDialog
     from PyQt4 import QtCore, QtGui
@@ -35,7 +37,11 @@ class IsotopeDialog(QDialog):
         self.init_widgets(element)
 
     def init_widgets(self, element):
-        pass
+        list_isotopes = []
+        for iso in getattr(periodictable, element):
+            list_isotopes.append(str(iso))
+
+        self.ui.comboBox.addItems(list_isotopes)
 
     def accept(self):
         self.parent.isotope_ui = None
