@@ -4,9 +4,12 @@ from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
 from ui_periodic_table import Ui_MainWindow as UiMainWindow
+from isotopes_handler import IsotopesHandler
 
 
 class PeriodicTable(QMainWindow):
+
+    isotope_ui = None
 
     def __init__(self, parent=None):
 
@@ -22,7 +25,7 @@ class PeriodicTable(QMainWindow):
         pass
 
     def click_button(self, element):
-        pass
+        IsotopesHandler(parent=self, element=element)
 
     def h_button(self):
         self.click_button('h')
